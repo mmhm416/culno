@@ -25,7 +25,7 @@
 | zip_code         | string     | null: false                     |
 | prefecture_id    | integer    | null: false                     |
 | city             | string     | null: false                     |
-| house_no         | string     | null: false                     |
+| adress         | string     | null: false                     |
 | building         | string     |                                 |
 | phone_no         | string     | null: false                     |
 | user             | references | null: false, foreign_key: true |
