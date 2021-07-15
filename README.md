@@ -99,3 +99,9 @@ https://github.com/mmhm416/culno
 | crop             | references | null: false, foreign_key: true |
 | address          | references | null: false, foreign_key: true |
 | quantity         | integer    | null: false                    |
+
+
+### Association
+- belongs_to :user
+- belongs_to :crop
+- belongs_to :address
