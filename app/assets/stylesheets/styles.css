@@ -3959,11 +3959,28 @@ textarea.form-control-lg {
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  margin-right: 1.2rem;
   font-size: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
 }
+
+.navbar-brand-name {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 2.0rem;
+  text-decoration: none;
+  white-space: nowrap;
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+}
+
+
 .navbar-nav {
   display: flex;
   flex-direction: column;
@@ -7420,6 +7437,14 @@ textarea.form-control-lg {
   background-color: #212529 !important;
 }
 
+.bg-top {
+background-image: url("/top_header.jpg");
+}
+
+.bg-crop {
+  background-image: url("/crop_header.jpg");
+  }
+
 .bg-body {
   background-color: #fff !important;
 }
@@ -10875,3 +10900,354 @@ textarea.form-control-lg {
   width: 70%;
   padding: 16px 8px;
 }
+
+.sell-price {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.price-content {
+  width: 350px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.price-text {
+  /* min-width: 170px; */
+  display: flex;
+  align-items: center;
+}
+
+.sell-yen {
+  font-size: 18px;
+}
+
+.price-input {
+  width: 180px;
+  height: 30px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.quantity-input {
+  width: 180px;
+  height: 30px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+
+.items-sell-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 300px;
+  padding: 10vh 15vw;
+  
+}
+
+.items-sell-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 共通 */
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.select-box {
+  height: 30px;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-left: 20px;
+}
+
+.question {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #0099e8;
+  color: #FFF;
+  font-size: 13px;
+  text-align: center;
+  line-height: 20px;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.question-text {
+  display: flex;
+}
+
+.transaction-contents {
+  width: 100vw;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.transaction-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 10vw;
+}
+
+.transaction-title-text {
+  text-align: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* 購入内容の表示 */
+.buy-item-info {
+  height: 150px;
+  border-bottom: 2px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-item-img {
+  margin-right: 20px;
+  height: 130px;
+  width: 250px;
+  object-fit: contain;
+}
+
+.buy-item-right-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-item-text {
+  font-size: 20px;
+}
+
+.buy-item-price {
+  font-weight: bold;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.item-price-text {
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.item-price-sub-text {
+  font-size: 12px;
+}
+
+/* /購入内容の表示 */
+
+/* 支払額の表示 */
+.item-payment {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.item-address {
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.item-address-choice{
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+  flex-direction: column;
+}
+
+.item-address-set{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-payment-title {
+  font-size: 20px;
+}
+
+.item-payment-price {
+  font-size: 25px;
+}
+
+/* /支払額の表示 */
+
+/* カード情報の入力 */
+.credit-card-form {
+  border-bottom: 2px solid #f5f5f5;
+  margin-top: 15px;
+  padding-bottom: 30px;
+}
+
+.info-input-haedline {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.available-card {
+  display: flex;
+  height: 35px;
+}
+
+.card-logo {
+  width: 40px;
+  margin: 5px 5px;
+}
+
+.input-expiration-date-wrap {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  line-height: 55px;
+}
+
+.input-expiration-date {
+  width: 20%;
+  margin-top: 5px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+  line-height: 45px;
+  text-align: center;
+}
+
+/* /カード情報の入力 */
+
+/* 配送先の入力 */
+.shipping-address-form {
+  margin-top: 15px;
+}
+
+.form-any {
+  background: #ccc;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.buy-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.buy-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+.imagesContainer {
+  width: 50vw;
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 58.3333333333%;
+}
+
+
+
+// 投稿トップ画像===========================================================
+.showMainImage {
+  border: 1px solid #000000;
+  margin-top: 10px;
+  height: 40vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+// 投稿画像一覧（横並びで最大５枚まで表示）=======================================
+.subImagesContainer {
+  display: flex;
+  height: 10vh;
+  .subImage {
+    width: 10vw;
+    height: 10vh;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.btn-1 {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  width: 25vw;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+
+}
+
+.rev-btn {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  width: 25vw;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

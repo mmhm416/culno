@@ -28,9 +28,8 @@
 <p> </p>
 <p> </p>
     <% if current_user.id == @user.id %>
-    <% if @user.address.blank? %>
       <li><%= link_to '住所情報の投稿', new_user_address_path(current_user.id),  class: "address-post" %></li>
-    <% else %>
+    <% if @user.address.present? %>
       <li><%= link_to '住所情報の確認', user_addresses_path(current_user.id),  class: "address-index" %></li>
       <li><%= link_to '住所情報の編集', edit_user_address_path(current_user.id),  class: "address-edit" %></li>
     <% end %>

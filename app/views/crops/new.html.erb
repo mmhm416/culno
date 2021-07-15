@@ -1,10 +1,10 @@
-  </header>
+<div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
     <%= form_with model: @crop, local: true do |f| %>
 
-    <%=# render 'shared/error_messages', model: f.object =%>
-
+    <%= render 'shared/error_messages', model: f.object =%>
+    
     <div class="img-upload">
       <div class="weight-bold-text">
         出品画像
@@ -14,8 +14,9 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :images,  name: 'crop[images][]', id:"item-image" %>
       </div>
+      <div id="image-list"></div>
     </div>
 
     <div class="new-items">
@@ -88,7 +89,7 @@
           <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
         </div>
         <div class="price-content">
-          <span>販売手数料 (10%)</span>
+          <span>販売手数料 (5%)</span>
           <span>
             <span id='add-tax-price'></span>円
           </span>
@@ -109,13 +110,13 @@
         を必ずご確認ください。
       </p>
       <p class="sentence">
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        <a href="#">偽ブランドの販売</a>
-        は犯罪であり処罰される可能性があります。
+        加工食品の販売には保健所の許可が必要です。
+        <a href="#">無許可での加工食品販売</a>
+        は法令違反であり処罰される可能性があります。
       </p>
       <p class="sentence">
-        また、出品をもちまして
-        <a href="#">加盟店規約</a>
+        出品をもちまして
+        <a href="#">利用規約</a>
         に同意したことになります。
       </p>
     </div>
@@ -127,15 +128,4 @@
 
   </div>
   <% end %>
-
-  <footer class="items-sell-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
-    </ul>
-    <p class="inc">
-      ©︎Furima,Inc.
-    </p>
-  </footer>
 </div>

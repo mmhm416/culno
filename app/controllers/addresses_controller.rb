@@ -40,10 +40,11 @@ def address_params
 end
 
 def set_address
-  @address = Address.find_by(user_id: params[:user_id])
+  @address = Address.where(user_id: params[:user_id])
+  @address_mono = Address.find_by(user_id: params[:user_id])
 end
 
 def move_to_index
-  redirect_to root_path if (current_user.id != @address.user_id)
+  redirect_to root_path if (current_user.id != @address_mono.user_id)
 end
 
