@@ -24,28 +24,16 @@
           </tr>
         </tbody>
       </table>
+<p> </p>
+<p> </p>
+<p> </p>
+    <% if current_user.id == @user.id %>
       <li><%= link_to '住所情報の投稿', new_user_address_path(current_user.id),  class: "address-post" %></li>
-          <p class='info-text'>※他ユーザーには表示されません</p>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">名前</th>
-            <td class="table__col2"><%= @user.address.zip_code %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">メールアドレス</th>
-            <td class="table__col2"><%= @user.email %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">誕生日</th>
-            <td class="table__col2"><%= @user.birthday %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">ユーザーの種類</th>
-            <td class="table__col2"><%= @user.level.name %></td>
-          </tr>
-        </tbody>
-      </table>
+    <% if @user.address.present? %>
+      <li><%= link_to '住所情報の確認', user_addresses_path(current_user.id),  class: "address-index" %></li>
+    <% end %>
+    <% end %>
     </div>
+    <h3><%= link_to 'トップへ戻る', root_path,  class: "return_root" %></h3>
   </div>
 </div>

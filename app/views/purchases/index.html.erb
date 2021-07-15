@@ -1,0 +1,104 @@
+
+
+<div class='transaction-contents'>
+  <div class='transaction-main'>
+    <h1 class='transaction-title-text'>
+      購入内容の確認
+    </h1>
+
+    <div class='buy-item-info'>
+      <%= image_tag @crop.images[0], class: 'buy-item-img' %>
+      <div class='buy-item-right-content'>
+        <h2 class='buy-item-text'>
+          <%= @crop.item_name %>
+        </h2>
+        <div class='buy-item-price'>
+          <p class='item-price-text', id='price-apiece', data-value=<%@crop.price%> >単価:<%= @crop.price %> 円</p>
+          <p class='item-price-sub-text'><%= @crop.delivery_cost.name %></p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <%= form_with id: 'charge-form', class: 'transaction-form-wrap', model: @purchase, url:crop_purchases_path,local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object =%>
+
+      <div class='item-address'>住所選択
+      </div>
+      <div class='item-address-choice'>
+      <% @address.each do |address| %>
+      <div class='item-address-set'>
+        <%= f.label :address_id, "#{address.prefecture.name}#{address.city}#{address.addresses}#{address.building}　　　", value: address.id %> 
+        <%= f.radio_button :address_id, address.id %>
+      </div>
+      <% end %>
+      </div>
+
+    <div class='item-payment'>
+        <div class="price-content">
+          <div class="price-text">
+            <span>個数</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :quantity, class:"quantity-input", id:"item-quantity", placeholder:"例）2" %>
+        </div>
+    </div>
+    <div class='item-payment'>
+      <div class='item-payment-title'>
+          <span>合計金額</span>
+          <span>
+            <span id='total-price'></span>円
+      </div>
+    </div>
+
+
+
+
+
+    <%# カード情報の入力 %>
+    <div class='credit-card-form'>
+      <h1 class='info-input-haedline'>
+        クレジットカード情報入力
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">カード情報</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :number, class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+        <div class='available-card'>
+          <%= image_tag 'card-visa.gif', class: 'card-logo'%>
+          <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
+          <%= image_tag 'card-jcb.gif', class: 'card-logo'%>
+          <%= image_tag 'card-amex.gif', class: 'card-logo'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">有効期限</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-expiration-date-wrap'>
+          <%= f.text_area :exp_month, class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
+          <p>月</p>
+          <%= f.text_area :exp_year, class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
+          <p>年</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">セキュリティコード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :cvc,class:"input-default", id:"card-cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+      </div>
+    </div>
+    <%# /カード情報の入力 %>
+    <div class='buy-btn'>
+      <%= f.submit "購入" ,class:"buy-red-btn" %>
+      <%= link_to "戻る", crop_path(@crop.id) ,class:"rev-btn"%>
+    </div>
+    <% end %>
+  </div>
+</div>

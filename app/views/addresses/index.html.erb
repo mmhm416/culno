@@ -1,0 +1,55 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@address_mono.user.nickname}さんの情報" %>
+      </h2>
+      <% @address.each_with_index do |address, idx| %>
+      <h3>住所<%= idx + 1 %> </h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">姓</th>
+            <td class="table__col2"><%= address.first_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">姓(カナ)</th>
+            <td class="table__col2"><%= address.first_name_kana %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">名</th>
+            <td class="table__col2"><%= address.last_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">名(カナ)</th>
+            <td class="table__col2"><%= address.last_name_kana %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">法人名</th>
+            <td class="table__col2"><%= address.business_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">郵便番号</th>
+            <td class="table__col2"><%= address.zip_code %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">都道府県 </th>
+            <td class="table__col2"><%= address.prefecture.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">市町村</th>
+            <td class="table__col2"><%= address.city %></td>
+          </tr>
+            <th class="table__col1">番地</th>
+            <td class="table__col2"><%= address.addresses %></td>
+          </tr>
+            <th class="table__col1">建物名</th>
+            <td class="table__col2"><%= address.building %></td>
+          </tr>
+            <th class="table__col1">電話番号</th>
+            <td class="table__col2"><%= address.phone_no %></td>
+        </tbody>
+        <%= link_to '住所情報の編集', edit_user_address_path(current_user.id, address.id),  class: "address-edit" %>
+      </table>
+      <% end %>
+      <h4><%= link_to "#{current_user.nickname} さんの情報トップへ戻る", user_path(current_user.id),  class: "return_root" %></h4>

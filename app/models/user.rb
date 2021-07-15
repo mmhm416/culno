@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     
   has_one :address
+  has_many :crops
+  has_many :purchases
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :level
