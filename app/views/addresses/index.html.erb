@@ -49,6 +49,7 @@
             <th class="table__col1">電話番号</th>
             <td class="table__col2"><%= address.phone_no %></td>
         </tbody>
+        <%= link_to '住所情報の編集', edit_user_address_path(current_user.id, address.id),  class: "address-edit" %>
       </table>
-
       <% end %>
+      <h4><%= link_to "#{current_user.nickname} さんの情報トップへ戻る", user_path(current_user.id),  class: "return_root" %></h4>

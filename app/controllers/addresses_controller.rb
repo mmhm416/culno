@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_address, only: [:edit, :update, :index]
+  before_action :set_address, only: [:edit, :update]
+  before_action :set_address_index, only: [:index]
   before_action :move_to_index, only: [:edit, :update, :index]
 
   def new
@@ -28,6 +29,8 @@ class AddressesController < ApplicationController
   end
 
   def index
+    @address = Address.where(user_id: params[:user_id])
+    @address_mono = Address.find_by(user_id: params[:user_id])
   end
 
 end
@@ -40,7 +43,11 @@ def address_params
 end
 
 def set_address
-  @address = Address.where(user_id: params[:user_id])
+  @address = Address.find(params[:id])
+  @address_mono = Address.find_by(user_id: params[:user_id])
+end
+
+def set_address_index
   @address_mono = Address.find_by(user_id: params[:user_id])
 end
 
