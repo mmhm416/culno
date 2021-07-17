@@ -11180,7 +11180,7 @@ background-image: url("/top_header.jpg");
 
 
 .imagesContainer {
-  width: 50vw;
+  width: 70vw;
   padding: 50px 50px;
   display: flex;
   flex-direction: column;
@@ -11194,7 +11194,7 @@ background-image: url("/top_header.jpg");
 .showMainImage {
   border: 1px solid #000000;
   margin-top: 10px;
-  height: 40vh;
+  height: 4px;
   border-radius: 20px;
   background-size: cover;
   background-position: center center;

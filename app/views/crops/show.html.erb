@@ -50,7 +50,9 @@
 
                     <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
                     <p>到着日数: <%=@crop.delivery_time.name %></p> 
+            <% if current_user.id != @crop.user.id %>
             <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
+            <% end %>
             <%= link_to "戻る", crops_path ,class:"btn btn-1"%>
                 </div>
             </div>
