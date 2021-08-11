@@ -1,0 +1,82 @@
+.showMainImage {
+  border: 1px solid #000000;
+  margin-top: 10px;
+  height: 40vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.areaInfomation {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4vh;
+  width: 90px;
+  margin: 5px 0 0 5px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.areaInfomation .showUserIcon {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.areaInfomation .areaName {
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+.postBookmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4vh;
+  width: 4vw;
+  margin: 5px 0 0 5px;
+}
+
+.bookmarkCount {
+  margin-left: 0.5vw;
+}
+
+.subImagesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+}
+
+.subImagesContainer .subImage {
+  width: 10vw;
+  height: 10vh;
+  background-size: cover;
+  background-position: center center;
+}
+/*# sourceMappingURL=crops.css.map */
