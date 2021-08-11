@@ -23,16 +23,15 @@ $(function(){
                                         <img src='${e.target.result}' title='${file.name}' >
                                       </figure>
                                       <div class="preview-image__button">
-                                        <a class="preview-image__button__edit">編集</a>
                                         <a class="preview-image__button__delete" data-image-id="${labelLength}">削除</a>
                                       </div>
                                     </li>`);
           $("#image-input>label").eq(-1).css('display','none');
 
 
-          if (imageLength < 4) {
+          if (imageLength < 3) {
             $("#image-input").append(`<label for="item_images${labelLength+1}" class="sell-container__content__upload__items__box__label" data-label-id="${labelLength+1}">
-                                        <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}" style="display: none;" type="file" name="item[images][]">
+                                        <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}" style="display: none;" type="file" name="crop[images][]">
                                         <i class="input-comment">
                                         ドラッグアンドドロップ                             
                                         またはクリックしてファイルをアップロード                             
