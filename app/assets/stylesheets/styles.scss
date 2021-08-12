@@ -9358,6 +9358,7 @@ background-image: url("/top_header.jpg");
   .px-lg-5 {
     padding-right: 3rem !important;
     padding-left: 3rem !important;
+    
   }
 
   .py-lg-0 {
@@ -11339,6 +11340,8 @@ background-image: url("/top_header.jpg");
   padding: 50px 50px;
   display: flex;
   flex-direction: column;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
@@ -11349,10 +11352,10 @@ background-image: url("/top_header.jpg");
   margin-top: 10px;
   height: 40vh;
   border-radius: 20px;
-  background-size:contain;
-  background-repeat: no-repeat;
-  background-position: center center;
   position: relative;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 // 投稿画像表示=======================================
@@ -11364,12 +11367,12 @@ background-image: url("/top_header.jpg");
     width: 10vw;
     height: 10vh;
     border-radius: 20px;
-    background-size:contain;
-    background-repeat: no-repeat;
     background-position: center center;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
