@@ -32,36 +32,35 @@
         <div class="container px-4 px-lg-5">
             <!-- Heading Row-->
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
-            <div class='imagesContainer'>
-                <div class='showMainImage', id='mainImage', style="background-image: url(<%= rails_blob_path(@crop.images[0])%>)">
+                <div class='imagesContainer'>
+                    <div class='showMainImage', id='mainImage', style="background-image: url(<%= rails_blob_path(@crop.images[0])%>)">
+                    </div>
+                    <ul class="subImagesContainer">
+                        <% @crop.images.each_with_index do |image, i| %>
+                            <div class='subImage', style="background-image: url(<%= rails_blob_path(@crop.images[i])%>)">
+                            </div>
+                        <% end %>
+                    </ul>
                 </div>
-                <ul class="subImagesContainer">
-                    <% @crop.images.each_with_index do |image, i| %>
-                        <div class='subImage', style="background-image: url(<%= rails_blob_path(@crop.images[i])%>)">
-                        </div>
-                    <% end %>
-                </ul>
-            </div>
-                <div class="col-lg-5">
-                    <h1 class="font-weight-light"><%= @crop.item_name %></h1>
-                    <p><%= @crop.explanation %></p>
-                    <p>産地: <%= @crop.prefecture.name %></p>
-                    <p>状態: <%= @crop.condition.name %></p>
-
-                    <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
-                    <p>到着日数: <%=@crop.delivery_time.name %></p> 
-            <% if current_user.id != @crop.user.id %>
-            <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
-            <% end %>
-            <%= link_to "戻る", crops_path ,class:"btn btn-1"%>
+                    <div class="col-lg-5">
+                        <h1 class="font-weight-light"><%= @crop.item_name %></h1>
+                        <p><%= @crop.explanation %></p>
+                        <p>産地: <%= @crop.prefecture.name %></p>
+                        <p>状態: <%= @crop.condition.name %></p>
+                        <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
+                        <p>到着日数: <%=@crop.delivery_time.name %></p> 
+                        <% if current_user.id != @crop.user.id %>
+                        <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
+                        <% end %>
+                        <%= link_to "戻る", crops_path ,class:"btn btn-1"%>
+                    </div>
                 </div>
-            </div>
-            <% if current_user.id == @crop.user.id %>
-            <%= link_to "削除", crop_path, method: :delete, class:"btn btn-1"%>
-            <%= link_to "商品の編集", edit_crop_path, method: :get, class:"btn btn-1"%>
-            <% end %>
-            </div>
+                <% if current_user.id == @crop.user.id %>
+                <%= link_to "削除", crop_path, method: :delete, class:"btn btn-1"%>
+                <%= link_to "商品の編集", edit_crop_path, method: :get, class:"btn btn-1"%>
+                <% end %>
         </div>
+    
 
 
         <!-- Footer-->
