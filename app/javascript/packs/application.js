@@ -13,6 +13,8 @@ require("../total_price")
 require("../preview")
 require("../card")
 import("../itemview")
+import("../image_post")
+
 
 //= require jquery3
 //= require popper
