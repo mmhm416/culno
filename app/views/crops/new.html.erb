@@ -1,6 +1,10 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
+
+
+
+
     <%= form_with model: @crop, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object =%>
@@ -16,30 +20,18 @@
             クリックしてファイル４枚アップロード
           </div>
       </div>
-
-        <%#= f.file_field :images,  name: 'crop[images][]', id:"item-image" %>
       <div class = "sell-container__content__upload__items__box">
         <ul id="output-box">
           <div id="image-input", tabindex:"0" >
             <%= f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0} do %>
-              <%= f.file_field :images, multiple: true, class: "sell-container__content__upload__items__box__input", name: 'crop[images][]', id: "item_images0",style: 'display: none;' %>
-                <p>
-                  <i class="input-comment">
-                             ドラッグアンドドロップ                             
-                             またはクリックしてファイルをアップロード                             
-                  </i>
-                </p>
+              <%= f.file_field :images, multiple: true, class: 'dropzone', name: 'crop[images][]', id: "item_images0" %>
             <% end %>
           </div>
         </ul>
       </div>
     </div>
-  <%
-=begin%>
- <div id="image-list"></div> 
-<%
-=end%>
-    </div>
+  </div>
+
 
     <div class="new-items">
       <div class="weight-bold-text">
