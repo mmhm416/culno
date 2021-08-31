@@ -17,16 +17,17 @@
         </div>
         <div class="click-upload">
           <div class="file-up">
-            クリックしてファイル４枚アップロード
+            クリックorドラッグ&ドロップで画像ファイルを４枚アップロード
           </div>
       </div>
+
       <div class = "sell-container__content__upload__items__box">
         <ul id="output-box">
           <div id="image-input", tabindex:"0" >
-            <%= f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0} do %>
-              <%= f.file_field :images, multiple: true, class: 'dropzone', name: 'crop[images][]', id: "item_images0" %>
+            <%= f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label ', data: {label_id: 0} do %>
+              <%= f.file_field :images, multiple: true, class: ' dropzone drop-item', name: 'crop[images][]', id: "item_images0" %>
             <% end %>
-          </div>
+          <div >
         </ul>
       </div>
     </div>
