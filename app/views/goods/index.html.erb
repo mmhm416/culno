@@ -51,7 +51,6 @@
             </div>
         </nav>
 
-
         <!-- Header-->
         <header class="bg-crop py-5">
             <div class="container px-4 px-lg-5 my-5">
@@ -61,6 +60,14 @@
             </div>
         </header>
         <!-- Section-->
+
+        <%
+=begin%>
+ <% @purchases.each do |purchase| %>
+<h1 class="display-4 fw-bolder">売り上げ合計金額<%= purchase.ids %></h1>
+        <% end %> 
+<%
+=end%>
 
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -80,6 +87,7 @@
                                     <h5 class="fw-bolder"> <%= crop.item_name %> </h5>
                                     <!-- Product price-->
                                     <span><%= crop.price %>円<br><%= crop.delivery_cost.name %><br>出品者:<%= crop.user.nickname %></span>
+
                                 </div>
                             </div>
                             <!-- Product actions-->
