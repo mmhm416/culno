@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :crops do
     resources :purchases, only: [:index, :create]
+    collection do
+      get 'search'
+    end
   end
 
   resources :users, only: [:show] do

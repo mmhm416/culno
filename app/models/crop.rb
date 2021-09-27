@@ -30,6 +30,16 @@ class Crop < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   validate :image_length, :image_size
 
+
+  def self.search(search)
+    if search != ""
+      Crop.where('item_name LIKE(?)', "%#{search}%")
+    else
+      Crop.all
+    end
+  end
+
+
   private
   def image_length
     if images.length != 4
