@@ -4430,6 +4430,12 @@ textarea.form-control-lg {
   }
 }
 
+.card-img-top {
+  height: 240px;
+  width: 240px;
+
+}
+
 .accordion-button {
   position: relative;
   display: flex;
@@ -11332,11 +11338,15 @@ background-image: url("/top_header.jpg");
   font-size: 14px;
   cursor: pointer;
 }
-
+.file-up {
+  font-size: large;
+  font-weight: bold;
+}
 
 
 .imagesContainer {
-  width: 50vw;
+  width: 40vw;
+  max-width: 600px;
   padding: 50px 50px;
   display: flex;
   flex-direction: column;
@@ -11344,9 +11354,6 @@ background-image: url("/top_header.jpg");
   background-repeat: no-repeat;
 }
 
-
-
-// 投稿トップ画像===========================================================
 .showMainImage {
   border: 1px solid #000000;
   margin-top: 10px;
@@ -11358,7 +11365,6 @@ background-image: url("/top_header.jpg");
   background-repeat: no-repeat;
 }
 
-// 投稿画像表示=======================================
 .subImagesContainer {
   display: flex;
   height: 10vh;

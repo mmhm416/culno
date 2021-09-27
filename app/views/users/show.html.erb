@@ -27,6 +27,7 @@
 <p> </p>
 <p> </p>
 <p> </p>
+      <li><%= link_to '出品作物の確認', user_goods_path(current_user.id),  class: "address-index" %></li>
     <% if current_user.id == @user.id %>
       <li><%= link_to '住所情報の投稿', new_user_address_path(current_user.id),  class: "address-post" %></li>
     <% if @user.address.present? %>

@@ -15,7 +15,7 @@ require("../card")
 import("../itemview")
 import("../image_post")
 
-
+//= require dropzone
 //= require jquery3
 //= require popper
 //= require bootstrap

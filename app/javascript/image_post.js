@@ -32,11 +32,7 @@ $(function(){
 
           if (imageLength < 3) {
             $("#image-input").append(`<label for="item_images${labelLength+1}" class="sell-container__content__upload__items__box__label" data-label-id="${labelLength+1}">
-                                        <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}" style="display: none;" type="file" name="crop[images][]">
-                                        <i class="input-comment">
-                                        ドラッグアンドドロップ                             
-                                        またはクリックしてファイルをアップロード                             
-                                        </i>
+                                        <input multiple="multiple" class="dropzone drop-item" id="item_images${labelLength+1}" type="file" name="crop[images][]">
                                       </label>`);
           };
         };
@@ -60,11 +56,7 @@ $(document).on('click', '.preview-image__button__delete', function(){
     let labelLength = $("#image-input>label").eq(-1).data('label-id');
     // 表示されているプレビューが９なら,#image-inputの子要素labelの中から最後の要素のカスタムデータidを取得
     $("#image-input").append(`<label for="item_images${labelLength+1}" class="sell-container__content__upload__items__box__label" data-label-id="${labelLength+1}">
-                                <input multiple="multiple" class="sell-container__content__upload__items__box__input" id="item_images${labelLength+1}" style="display: none;" type="file" name="item[images][]">
-                                <i class="input-comment">
-                                ドラッグアンドドロップ                             
-                                またはクリックしてファイルをアップロード                             
-                                </i>
+                                <input multiple="multiple" class="dropzone drop-item" id="item_images${labelLength+1}" type="file" name="crop[images][]">
                               </label>`);
   };
 });
