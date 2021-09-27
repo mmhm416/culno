@@ -39,6 +39,11 @@ class CropsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @crops = Crop.search(params[:keyword])
+  end
+
+
   private
 
   def crop_params
