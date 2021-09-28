@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one :address
   has_many :crops
   has_many :purchases
+  has_many :messages
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :level
