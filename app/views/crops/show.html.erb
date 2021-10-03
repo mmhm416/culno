@@ -65,31 +65,35 @@
                 <% end %>
         </div>
     
-        
-  <div class="container">
+
+  <div class="input-message">
     <% if user_signed_in? %>
       <%= form_with(model: [@crop, @message], local: true) do |f| %>
     <div class="img-upload">
-      <div class="weight-bold-text">
-        出品画像
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
-      </div>
-    </div>
+      <strong ><p class=comment-form>コメントフォーム</p>
+      </strong>
 
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          コメント
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :comment, class:"items-text", id:"item-info", placeholder:"コメント(120字以内)" ,rows:"7" ,maxlength:"120" %>
+      <div class="weight-bold-text">
+        投稿画像
+        <span class="indispensable">どちらか必須</span>
       </div>
+
+      <div class=" click-upload">
+        <p>
+          クリックorドラッグ&ドロップで画像ファイルを1枚アップロード
+        </p>
+        <div class='message-input', id='message-input'>
+        <%= f.file_field :image,  class:" dropzone message-image-input" %>
+        </div>
+      </div>
+
+      <div class="weight-bold-text">
+        コメント
+      <span class="indispensable">どちらか必須</span>
+      </div>
+        <%= f.text_area :comment, class:"message-text", id:"item-info", placeholder:"コメント(120字以内)" ,rows:"7" ,maxlength:"120" %>
         <%= f.submit "SEND" %>
+    </div>
       <% end %>
 
     <% else %>
@@ -97,14 +101,17 @@
         </strong>
     <% end %>
     
+  </div>
+
+
     <div class="messages">
       <h4>＜コメント一覧＞</h4>
       <% @messages.each do |message| %>
-        <p>
-          <strong><%= link_to message.user.nickname, "/users/#{message.user_id}" %>：</strong>
+        <div class="messages-content">
+          <strong><%= link_to message.user.nickname, "/users/#{message.user_id}", class: 'message-name' %></strong>
           <%= image_tag message.image.variant(resize: '250x250'),  class: 'message-image' if message.image.attached? %>
           <%= message.comment %>
-        </p>
+        </div>
       <% end %>
     </div>
   </div>
