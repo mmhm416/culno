@@ -21,6 +21,8 @@ class CropsController < ApplicationController
   end
 
   def show
+    @message = Message.new
+    @messages = Message.includes(:user).order('created_at DESC')
   end
 
   def edit

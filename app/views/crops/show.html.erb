@@ -15,7 +15,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="#!">カルノーカ</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -49,17 +49,66 @@
                         <p>状態: <%= @crop.condition.name %></p>
                         <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
                         <p>到着日数: <%=@crop.delivery_time.name %></p> 
+                        <% if user_signed_in? %>
                         <% if current_user.id != @crop.user.id %>
                         <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
+                        <% end %>
                         <% end %>
                         <%= link_to "戻る", crops_path ,class:"btn btn-1"%>
                     </div>
                 </div>
+                <% if user_signed_in? %>
                 <% if current_user.id == @crop.user.id %>
                 <%= link_to "削除", crop_path, method: :delete, class:"btn btn-1"%>
                 <%= link_to "商品の編集", edit_crop_path, method: :get, class:"btn btn-1"%>
                 <% end %>
+                <% end %>
         </div>
+    
+        
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@crop, @message], local: true) do |f| %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          コメント
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :comment, class:"items-text", id:"item-info", placeholder:"コメント(120字以内)" ,rows:"7" ,maxlength:"120" %>
+      </div>
+
+        <%= f.submit "SEND" %>
+      <% end %>
+
+    <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+        </strong>
+    <% end %>
+    
+    <div class="messages">
+      <h4>＜コメント一覧＞</h4>
+      <% @messages.each do |message| %>
+        <p>
+          <strong><%= link_to message.user.nickname, "/users/#{message.user_id}" %>：</strong>
+          <%= image_tag message.image, class: "card-img-top" %>
+          <%= message.comment %>
+        </p>
+      <% end %>
+    </div>
+  </div>
     
 
 
