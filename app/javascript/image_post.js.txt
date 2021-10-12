@@ -1,1 +1,0 @@
-<a class="preview-image__button__edit">編集</a>

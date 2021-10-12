@@ -14,6 +14,7 @@ require("../preview")
 require("../card")
 import("../itemview")
 import("../image_post")
+require("../message_post")
 
 //= require dropzone
 //= require jquery3
