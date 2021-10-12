@@ -22,7 +22,8 @@ class CropsController < ApplicationController
 
   def show
     @message = Message.new
-    @messages = Message.includes(:user).order('created_at DESC')
+    @crop = Crop.find(params[:id])
+    @messages = @crop.messages.includes(:user).order('created_at DESC')
   end
 
   def edit

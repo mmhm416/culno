@@ -11435,7 +11435,6 @@ background-image: url("/top_header.jpg");
   margin: 2em auto;
   border: double 5px #4ec4d3;
   width: 400px;
-  
 }
 
 .comment-form{
@@ -11445,6 +11444,8 @@ background-image: url("/top_header.jpg");
 .message-image-input{
   opacity: 0;
   width: auto;
+  height: 300px
+  
 }
 
 .message-text{
@@ -11481,4 +11482,6 @@ background-image: url("/upload.png");
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
+height: 300px
 }
+
