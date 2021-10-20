@@ -7445,10 +7445,15 @@ textarea.form-control-lg {
 
 .bg-top {
 background-image: url("/top_header.jpg");
+background-position: center;
+background-repeat: no-repeat;
 }
 
 .bg-crop {
-  background-image: url("/crop_header.jpg");
+background-image: url("/crop_header.jpg");
+background-position: center;
+background-repeat: no-repeat;
+
   }
 
 .bg-body {
