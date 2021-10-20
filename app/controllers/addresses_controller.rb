@@ -30,7 +30,7 @@ class AddressesController < ApplicationController
 
   def index
     @address = Address.where(user_id: params[:user_id])
-    @address_mono = Address.find_by(user_id: params[:user_id])
+    @user = User.find_by(id: params[:user_id])
   end
 
 end
