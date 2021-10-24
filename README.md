@@ -36,6 +36,27 @@ Githubリポジトリ
 https://github.com/mmhm416/culno
 
 
+
+# 使用技術(開発環境)
+
+## バックエンド
+Ruby, Ruby on Rails
+
+## フロントエンド
+Sass, css, HTML, JavaScript, JQuery
+
+## データベース
+MySQL, SequelPlo
+
+## ソース管理
+GitHub, GitHubDesktop
+
+## テスト
+RSpec
+
+## エディタ
+VSCode
+
 # テーブル設計
 
 ## users テーブル
@@ -92,6 +113,7 @@ https://github.com/mmhm416/culno
 ### Association
 - belongs_to :user
 - has_many :purchases
+- has_many :messages
 - has_many :messages
 
 ## Purchase テーブル
