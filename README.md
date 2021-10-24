@@ -1,6 +1,8 @@
 # README
 
 # 概要
+一般の家庭菜園
+
 農家が生産している作物の中には、味や品質には変わりないのにサイズ等が規格から外れたもの、形状が独特なもの、傷や汚れがあるものなどが出品できないことを知りました。このため、上記のお店には出せない作物を売買できるwebサービスがあれば農家さんの収入向上および食品ロス削減につながると考え実装を行いました。発表後のさらなる追加の実装として、現在使っていない農機具の貸し借りやユーザ発信機能、いいね機能なども実装できれば、このwebサービスがqiitaのような農家の情報コミュニティに発展する可能性もあると思います。
 
 
@@ -41,7 +43,6 @@ https://github.com/mmhm416/culno
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
 | nickname           | string  | null: false               |
-| business_name      | string  |                           |
 | email              | string  | unique: true, null: false |
 | encrypted_password | string  | null: false               |
 | birthday           | date    | null: false               |
@@ -51,6 +52,7 @@ https://github.com/mmhm416/culno
 - has_many :addresses
 - has_many :crops
 - has_many :purchases
+- has_many :messages
 
 ## Address テーブル
 | Column           | Type       | Options                         |
@@ -90,6 +92,7 @@ https://github.com/mmhm416/culno
 ### Association
 - belongs_to :user
 - has_many :purchases
+- has_many :messages
 
 ## Purchase テーブル
 
@@ -105,3 +108,15 @@ https://github.com/mmhm416/culno
 - belongs_to :user
 - belongs_to :crop
 - belongs_to :address
+
+## Message テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| crop             | references | null: false, foreign_key: true |
+| comment          | text       |                                |
+
+### Association
+- belongs_to :user
+- belongs_to :crop
