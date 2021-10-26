@@ -67,3 +67,4 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'dropzonejs-rails'
+gem "aws-sdk-s3", require: false
