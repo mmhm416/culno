@@ -1,23 +1,35 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
+
     <%= form_with model: @crop, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object =%>
     
     <div class="img-upload">
-      <div class="weight-bold-text">
-        出品画像
-        <span class="indispensable">必須</span>
+      <div class = "img-upload-text">
+        <div class="weight-bold-text">
+          出品画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <div class="file-up">
+            クリックorドラッグ&ドロップで画像ファイルを４枚アップロード
+          </div>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :images,  name: 'crop[images][]', id:"item-image" %>
+
+      <div class = "sell-container__content__upload__items__box">
+        <ul id="output-box">
+          <div id="image-input", tabindex:"0" >
+            <%= f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label ', data: {label_id: 0} do %>
+              <%= f.file_field :images, multiple: true, class: ' dropzone drop-item', name: 'crop[images][]', id: "item_images0" %>
+            <% end %>
+          <div >
+        </ul>
       </div>
-      <div id="image-list"></div>
     </div>
+  </div>
+
 
     <div class="new-items">
       <div class="weight-bold-text">
@@ -105,19 +117,14 @@
 
     <div class="caution">
       <p class="sentence">
-        <a href="#">禁止されている出品、</a>
-        <a href="#">行為</a>
-        を必ずご確認ください。
-      </p>
-      <p class="sentence">
-        加工食品の販売には保健所の許可が必要です。
-        <a href="#">無許可での加工食品販売</a>
-        は法令違反であり処罰される可能性があります。
+        加工食品の販売には保健所、
+        有機野菜としての販売は有機JASの認証が必要です。
+        無許可での加工食品、および有機野菜としての販売は
+        法令違反であり処罰される可能性があります。
       </p>
       <p class="sentence">
         出品をもちまして
-        <a href="#">利用規約</a>
-        に同意したことになります。
+        利用規約に同意したことになります。
       </p>
     </div>
 
