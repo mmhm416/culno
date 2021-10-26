@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_crop
-  #before_action :move_to_root_path
+  before_action :move_to_root_path
 
   def index
     @user = User.find(current_user.id)
@@ -39,7 +39,7 @@ class PurchasesController < ApplicationController
   end
 
   def move_to_root_path
-    redirect_to root_path if (current_user.id == @crop.user_id)
+    redirect_to root_path if (current_user.addresses.blank?)
   end
 
   def set_crop

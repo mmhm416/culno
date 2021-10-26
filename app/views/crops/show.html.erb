@@ -51,7 +51,9 @@
                         <p>到着日数: <%=@crop.delivery_time.name %></p> 
                         <% if user_signed_in? %>
                         <% if current_user.id != @crop.user.id %>
+                        <% if current_user.addresses.present? %>
                         <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
+                        <% end %>
                         <% end %>
                         <% end %>
                         <%= link_to "戻る", crops_path ,class:"btn btn-1"%>
