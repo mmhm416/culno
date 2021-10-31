@@ -1,8 +1,8 @@
 class Crop < ApplicationRecord
 
   belongs_to :user
-  has_many :purchases, dependent: :destroy
-  has_many :messages
+  has_many :purchases
+  has_many :messages, dependent: :destroy
 
   has_many_attached :images
 

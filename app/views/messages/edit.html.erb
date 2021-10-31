@@ -31,7 +31,9 @@
 
         <div class="container px-4 px-lg-5">
             <!-- Heading Row-->
-            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <%
+=begin%>
+ <div class="row gx-4 gx-lg-5 align-items-center my-5">
                 <div class='imagesContainer'>
                     <div class='showMainImage', id='mainImage', style="background-image: url(<%= rails_blob_path(@crop.images[0])%>)">
                     </div>
@@ -50,30 +52,19 @@
                         <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
                         <p>到着日数: <%=@crop.delivery_time.name %></p> 
                         <p>出品者: <%= link_to @crop.user.nickname, user_path(@crop.user.id) %></p>
-                        <% if user_signed_in? %>
-                        <% if current_user.id != @crop.user.id %>
-                        <% if current_user.addresses.present? %>
-                        <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
-                        <% end %>
-                        <% end %>
-                        <% end %>
-                        <%= link_to "戻る", crops_path ,class:"btn btn-1"%>
+                        <%= link_to "商品詳細へ戻る", "/crops/#{@message.crop.id}", class:"btn btn-1"%>
                     </div>
                 </div>
-                <% if user_signed_in? %>
-                <% if current_user.id == @crop.user.id %>
-                <%= link_to "削除", crop_path, method: :delete, class:"btn btn-1"%>
-                <%= link_to "商品の編集", edit_crop_path, method: :get, class:"btn btn-1"%>
-                <% end %>
-                <% end %>
-        </div>
+        </div> 
+<%
+=end%>
     
 
   <div class="input-message">
     <% if user_signed_in? %>
       <%= form_with(model: [@crop, @message], local: true) do |f| %>
     <div class="img-upload">
-      <strong ><p class=comment-form>コメントフォーム</p>
+      <strong ><p class=comment-form>コメント編集フォーム</p>
       </strong>
 
       <div class="weight-bold-text">
@@ -101,28 +92,12 @@
         <%= f.submit "SEND" %>
     </div>
       <% end %>
-
-    <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
-        </strong>
     <% end %>
     
   </div>
+</div>
 
 
-    <div class="messages">
-      <h4>＜コメント一覧＞</h4>
-      <% @messages.each do |message| %>
-        <div class="messages-content">
-          <strong><%= link_to message.user.nickname, "/users/#{message.user_id}", class: 'message-name' %></strong>
-          <%= image_tag message.image.variant(resize: '250x250'),  class: 'message-image' if message.image.attached? %>
-          <%= message.comment %>
-          <%= link_to "削除", crop_message_path(@crop, message), method: :delete %>
-          <%= link_to "編集", edit_crop_message_path(@crop, message), method: :get %>
-        </div>
-      <% end %>
-    </div>
-  </div>
 
 
         <!-- Footer-->
