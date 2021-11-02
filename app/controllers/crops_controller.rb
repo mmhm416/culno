@@ -51,7 +51,7 @@ class CropsController < ApplicationController
 
   def crop_params
     params.require(:crop).permit(:item_name, :explanation, :category_id, :condition_id, :delivery_cost_id, :prefecture_id,
-                                 :delivery_time_id, :price, images: []).merge(user_id: current_user.id)
+                                 :delivery_time_id, :price, :discontinued, images: []).merge(user_id: current_user.id)
   end
 
   def move_to_index
