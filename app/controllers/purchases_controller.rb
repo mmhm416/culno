@@ -3,6 +3,7 @@ class PurchasesController < ApplicationController
   before_action :set_crop
   before_action :move_to_root_path
 
+
   def index
     @user = User.find(current_user.id)
     @address = Address.where(user_id: current_user.id)
@@ -24,6 +25,10 @@ class PurchasesController < ApplicationController
 
   private
 
+  def set_crop
+    @crop = Crop.find(params[:crop_id])
+  end
+
   def purchase_params
     params.require(:purchase).permit(:quantity, :address_id).merge(user_id: current_user.id, crop_id: params[:crop_id],token: params[:token], price: @crop.price )
   end
@@ -40,12 +45,9 @@ class PurchasesController < ApplicationController
 
   def move_to_root_path
     redirect_to root_path if (current_user.addresses.blank?)
+    redirect_to root_path if (@crop.discontinued == true)
   end
 
-  def set_crop
-    @crop = Crop.find(params[:crop_id])
-  end
 
-  
 
 end

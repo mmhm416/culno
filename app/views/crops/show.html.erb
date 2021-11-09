@@ -45,13 +45,16 @@
                     <div class="col-lg-5">
                         <h1 class="font-weight-light"><%= @crop.item_name %></h1>
                         <p><%= @crop.explanation %></p>
+                        <% if @crop.discontinued == false %>
                         <p>産地: <%= @crop.prefecture.name %></p>
                         <p>状態: <%= @crop.condition.name %></p>
                         <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
                         <p>到着日数: <%=@crop.delivery_time.name %></p> 
+                        <% end %>
                         <p>出品者: <%= link_to @crop.user.nickname, user_path(@crop.user.id) %></p>
                         <% if user_signed_in? %>
                         <% if current_user.id != @crop.user.id %>
+                        <% if @crop.discontinued == false %>
                         <% if current_user.addresses.present? %>
                         <%= link_to "購入画面に進む", crop_purchases_path(@crop.id) ,class:"btn btn-1"%>
                         <% else %>
@@ -60,6 +63,7 @@
                         <br>
                         住所登録はトップページ→自身のニックネームクリックした先の<br>
                         マイページ内にあります。
+                        <% end %>
                         <% end %>
                         <% end %>
                         <% end %>
