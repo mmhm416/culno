@@ -63,6 +63,20 @@
     </div>
 
     <div class="items-detail">
+      <div class="weight-bold-text">非売、販売の選択</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.radio_button :discontinued, 0, checked: true %>
+        <%= f.label :discontinued, "販売品", {value: 0, style: "display: inline-block;"} %>
+        <%= f.radio_button :discontinued, 1 %>
+        <%= f.label :discontinued, "非売品/売切れ品", {value: 1, style: "display: inline-block;"} %>
+      </div>
+    </div>
+
+    <div class="items-detail">
       <div class="weight-bold-text question-text">
         <span>配送について</span>
         <a class="question" href="#">?</a>
@@ -70,17 +84,17 @@
       <div class="form">
         <div class="weight-bold-text">
           配送料の負担
-          <span class="indispensable">必須</span>
+          <span class="indispensable">非売時必須</span>
         </div>
         <%= f.collection_select(:delivery_cost_id, DeliveryCost.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           発送元の地域
-          <span class="indispensable">必須</span>
+          <span class="indispensable">非売時必須</span>
         </div>
         <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
         <div class="weight-bold-text">
           発送までの日数
-          <span class="indispensable">必須</span>
+          <span class="indispensable">非売時必須</span>
         </div>
         <%= f.collection_select(:delivery_time_id, DeliveryTime.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
@@ -95,7 +109,7 @@
         <div class="price-content">
           <div class="price-text">
             <span>価格</span>
-            <span class="indispensable">必須</span>
+            <span class="indispensable">非売時必須</span>
           </div>
           <span class="sell-yen">¥</span>
           <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
