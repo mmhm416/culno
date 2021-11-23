@@ -228,4 +228,4 @@ VSCode
 
 ## ER図
 
-![ER図](/Users/hm/projects/culno/public/c531cdcd5e5aa427365b280163f066e4.png) 
+![ER図](/public/c531cdcd5e5aa427365b280163f066e4.png) 
