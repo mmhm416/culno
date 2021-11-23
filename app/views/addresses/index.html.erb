@@ -52,4 +52,4 @@
         <%= link_to '住所情報の編集', edit_user_address_path(current_user.id, address.id),  class: "address-edit" %>
       </table>
       <% end %>
-      <h4><%= link_to "#{current_user.nickname} さんの情報トップへ戻る", user_path(current_user.id),  class: "return_root" %></h4>
+      <%=link_to 'もどる', user_path(current_user.id), class:"btn-1" %>

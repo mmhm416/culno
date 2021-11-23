@@ -74,7 +74,7 @@
         <%= f.text_field :addresses, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
       </div>
       <div class="form-group">
-        <div class='form-text-wrap'>Ï
+        <div class='form-text-wrap'>
           <label class="form-text">建物名</label>
           <span class="form-any">任意</span>
         </div>
@@ -92,8 +92,8 @@
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
     
   <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "住所登録" ,class:"register-red-btn" %>
   </div>
-
+  <%=link_to 'もどる', user_addresses_path, class:"back-btn-regist" %>
   </div>
 <% end %>
