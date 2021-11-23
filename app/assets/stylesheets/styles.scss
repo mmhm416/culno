@@ -4433,6 +4433,9 @@ textarea.form-control-lg {
 .card-img-top {
   height: 220px;
   width: 220px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .accordion-button {
@@ -6627,6 +6630,7 @@ textarea.form-control-lg {
 
 .h-100 {
   height: 100% !important;
+  width: 100% !important;
   align-items: center;
 }
 

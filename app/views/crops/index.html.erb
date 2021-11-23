@@ -81,7 +81,8 @@
                             <div class="card h-100">
                             
                             <!-- Product image-->
-                            <%= image_tag crop.images[0], class: "card-img-top" %>
+                            <div class="card-img-top", style="background-image: url(<%= rails_blob_path(crop.images[0])%>)">
+                            </div>
                             <!-- Product details-->
                             
                             <div class="card-body p-4">
