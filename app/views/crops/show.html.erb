@@ -73,7 +73,7 @@
                 <% if user_signed_in? %>
                 <% if current_user.id == @crop.user.id %>
                 <%= link_to "削除", crop_path, method: :delete, class:"btn btn-1"%>
-                <%= link_to "商品の編集", edit_crop_path, method: :get, class:"btn btn-1"%>
+                <%= link_to "作物の編集", edit_crop_path, method: :get, class:"btn btn-1"%>
                 <% end %>
                 <% end %>
         </div>

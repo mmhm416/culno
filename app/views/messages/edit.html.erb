@@ -52,7 +52,7 @@
                         <p>値段: <%= @crop.price %>円,   輸送費: <%=@crop.delivery_cost.name %></p>
                         <p>到着日数: <%=@crop.delivery_time.name %></p> 
                         <p>出品者: <%= link_to @crop.user.nickname, user_path(@crop.user.id) %></p>
-                        <%= link_to "商品詳細へ戻る", "/crops/#{@message.crop.id}", class:"btn btn-1"%>
+                        <%= link_to "作物詳細へ戻る", "/crops/#{@message.crop.id}", class:"btn btn-1"%>
                     </div>
                 </div>
         </div> 

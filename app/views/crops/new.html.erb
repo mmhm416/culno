@@ -1,6 +1,6 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
-    <h2 class="items-sell-title">商品の情報を入力</h2>
+    <h2 class="items-sell-title">作物の情報を入力</h2>
 
     <%= form_with model: @crop, local: true do |f| %>
 
@@ -33,21 +33,21 @@
 
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+        作物名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"作物名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          商品の説明
+          作物の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :explanation, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :explanation, class:"items-text", id:"item-info", placeholder:"作物の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 
     <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
+      <div class="weight-bold-text">作物の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
@@ -55,7 +55,7 @@
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
-          商品の状態
+          作物の状態
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
