@@ -107,14 +107,14 @@
 
 # 接続先情報
 
-リンク：https://culno.herokuapp.com/ 
-テスト用アカウント等 購入者用 メールアドレス: test111@gmail.com 
-パスワード: test111 
-購入用カード情報 番号：4242424242424242 
-期限：12/24 セキュリティコード：123 
-出品者用 メールアドレス名:test222@gmail.com 
-パスワード:test222 
-Githubリポジトリ：https://github.com/mmhm416/culno
+リンク：https://culno.herokuapp.com/  
+テスト用アカウント等 購入者用 メールアドレス: test111@gmail.com  
+パスワード: test111  
+購入用カード情報 番号：4242424242424242  
+期限：12/24 セキュリティコード：123  
+出品者用 メールアドレス名:test222@gmail.com  
+パスワード:test222  
+Githubリポジトリ：https://github.com/mmhm416/culno  
 
 
 
